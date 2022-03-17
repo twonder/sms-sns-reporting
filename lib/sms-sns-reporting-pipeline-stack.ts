@@ -1,5 +1,5 @@
 import { Construct, SecretValue, Stack, StackProps } from '@aws-cdk/core';
-import { CodePipeline, CodePipelineSource, ShellStep } from "@aws-cdk/pipelines";
+import { CdkPipeline, CodePipeline, CodePipelineSource, ShellStep } from "@aws-cdk/pipelines";
 
 /**
  * The stack that defines the application pipeline
@@ -15,7 +15,9 @@ export class SmsSnsReportingPipelineStack extends Stack {
        // How it will be built and synthesized
        synth: new ShellStep('Synth', {
          // Where the source can be found
-         input: CodePipelineSource.gitHub('twonder/sms-sns-reporting', 'main'),
+         input: CodePipelineSource.gitHub('twonder/sms-sns-reporting', 'main', {
+          authentication: SecretValue.secretsManager('github-cdk'),
+         }),
          
          // Install dependencies, build and run cdk synth
          commands: [
