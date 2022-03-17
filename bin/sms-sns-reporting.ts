@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { App } from '@aws-cdk/core';
-import { SmsSnsReportingStack } from '../lib/sms-sns-reporting-stack';
+import { SmsSnsReportingPipelineStack } from '../lib/sms-sns-reporting-pipeline-stack';
 
 const app = new App();
-new SmsSnsReportingStack(app, 'SmsSnsReportingStack', {
+new SmsSnsReportingPipelineStack(app, 'SmsSnsReportingPipelineStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */

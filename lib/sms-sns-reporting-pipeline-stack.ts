@@ -4,7 +4,7 @@ import { CodePipeline, CodePipelineSource, ShellStep } from "@aws-cdk/pipelines"
 /**
  * The stack that defines the application pipeline
  */
-export class CdkpipelinesDemoPipelineStack extends Stack {
+export class SmsSnsReportingPipelineStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
