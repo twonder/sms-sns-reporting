@@ -1,5 +1,6 @@
 import { Construct, SecretValue, Stack, StackProps } from '@aws-cdk/core';
 import { CdkPipeline, CodePipeline, CodePipelineSource, ShellStep } from "@aws-cdk/pipelines";
+import { SmsSnsReportingStage } from "./sms-sns-reporting-stage";
 
 /**
  * The stack that defines the application pipeline
@@ -29,6 +30,8 @@ export class SmsSnsReportingPipelineStack extends Stack {
     });
 
     // This is where we add the application stages
-    // ...
+    pipeline.addStage(new SmsSnsReportingStage(this, 'PreProd', {
+      env: { account: '019228762063', region: 'us-east-1' }
+    }))
   }
 }
