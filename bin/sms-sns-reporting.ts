@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
+import { App } from '@aws-cdk/core';
 import { SmsSnsReportingStack } from '../lib/sms-sns-reporting-stack';
 
-const app = new cdk.App();
+const app = new App();
 new SmsSnsReportingStack(app, 'SmsSnsReportingStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
@@ -15,7 +14,7 @@ new SmsSnsReportingStack(app, 'SmsSnsReportingStack', {
 
   /* Uncomment the next line if you know exactly what Account and Region you
    * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
+  env: { account: '019228762063', region: 'us-east-1' },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
