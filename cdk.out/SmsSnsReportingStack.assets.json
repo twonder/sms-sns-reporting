@@ -1,0 +1,19 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "62b13ab614dbe6a2c164c4e9712ee34d946419e9f4720db1f05d352d4cc984d1": {
+      "source": {
+        "path": "SmsSnsReportingStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "62b13ab614dbe6a2c164c4e9712ee34d946419e9f4720db1f05d352d4cc984d1.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
